@@ -1,0 +1,63 @@
+{
+  "name": "ds-challenge",
+  "version": "1.0.0",
+  "description": "A code challenge",
+  "main": "server.js",
+  "author": "Antonio Mejias <antoniomejiasv94@gmail.com>",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node --require dotenv/config",
+    "build": "babel . --ignore node_modules -d dist",
+    "serve": "node dist/server.js",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:seeds": "node_modules/.bin/sequelize db:seed:all",
+    "db:rollback": "NODE_ENV=test node_modules/.bin/sequelize db:migrate:undo:all",
+    "pretest": "node_modules/.bin/sequelize db:migrate &&",
+    "test:unit": "mocha -R spec --require babel-core/register ./test/unit/**/*.js",
+    "test:integration": "export NODE_ENV=test && npm run db:rollback && npm run db:migrate && npm run db:seeds && mocha -R spec --require babel-core/register ./test/integration/*.js "
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.9.0",
+    "pg-hstore": "^2.3.2",
+    "ramda": "^0.26.1",
+    "require-all": "^3.0.0",
+    "sequelize": "^5.2.8",
+    "sequelize-cli": "^5.4.0",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai-arrays": "^2.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "sinon-express-mock": "^2.2.0",
+    "supertest": "^4.0.2"
+  }
+}

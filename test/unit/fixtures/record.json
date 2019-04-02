@@ -1,0 +1,16 @@
+{
+    "id": 1234,
+    "claim_id": "2c949c57-6d20-4eca-b5d1-3bfe756b5284",
+    "createdAt": "2018-12-02T07:14:15.601Z",
+    "updatedAt": "2018-12-02T07:14:15.601Z",
+    "stories": [
+        {
+            "id":5678,
+            "record_id": 1234,
+            "question": "¿cuando podria enviarme la información solicitada?",
+            "answer": "Al tiro se la envio.",
+            "createdAt": "2018-12-02T07:58:44.597Z",
+            "updatedAt": "2018-12-02T08:00:36.531Z"
+        }
+    ]
+}

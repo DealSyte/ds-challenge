@@ -1,0 +1,52 @@
+{
+    "root": true,
+    "extends": "airbnb-base",
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "plugins": [
+        "import"
+    ],
+    "parserOptions": {
+       "ecmaVersion": 2018,
+       "sourceType": "module",
+       "ecmaFeatures": {
+         "globalReturn": true
+       }
+    },
+    "rules": {
+        "indent": "off",
+        "no-tabs": "off",
+        "no-param-reassign": "off",
+        "no-trailing-spaces": "off",
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "semi": 1,
+        "func-names": ["error", "never"],
+        "consistent-return": "off",
+        "no-var": 1,
+        "class-methods-use-this": "off",
+        "spaced-comment": ["error", "always", { "exceptions": ["*"] }],
+        "max-len": ["error", { "ignoreComments": true }, { "code": 260 }],
+        "no-console": "off"
+    },
+    "globals": {
+        "winston": true,
+        "errorWrap": true,
+        "models": true,
+        "Base": true,
+        "User": true,
+        "Claim": true,
+        "Story": true,
+        "Record": true,
+        "AuthenticationError": true,
+        "AuthorizationError": true,
+        "StoryError": true,
+        "RecordError": true,
+        "ClaimError": true,
+        "SequelizeError": true
+    }
+}
